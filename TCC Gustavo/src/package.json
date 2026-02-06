@@ -1,0 +1,20 @@
+{
+  "name": "tcc-gustavo",
+  "version": "1.0.0",
+  "description": "Portfólio TCC — servidor API de exemplo",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [],
+  "author": "Gustavo",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

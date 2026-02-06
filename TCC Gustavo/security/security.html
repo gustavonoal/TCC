@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Segurança — Gustavo</title>
+    <link rel="stylesheet" href="security.css">
+</head>
+<body>
+    <div id="loginContainer" class="login-container active">
+        <div class="login-box">
+            <h1>Entrada para o TCC</h1>
+            <div class="clock-display" id="clockLogin">00:00:00</div>
+            
+            <form id="loginForm" class="form-login">
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Digite sua senha"
+                        required
+                        autofocus
+                    >
+                </div>
+                <button type="submit" class="btn-login">Acessar</button>
+            </form>
+            
+            <div id="loginError" class="error-message"></div>
+        </div>
+    </div>
+    <div id="dashboardContainer" class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Painel de Controle</h1>
+            <button id="logoutBtn" class="btn-logout">Sair</button>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="info-panel clock-panel">
+                <h2>Horário Atual</h2>
+                <div class="clock-large" id="clockDashboard">00:00:00</div>
+                <div class="date-display" id="dateDisplay">Carregando...</div>
+            </div>
+            <div class="info-panel control-panel">
+                <h2>📊 Painel De/Para</h2>
+                
+                <div class="control-section">
+                    <h3>Saída (De)</h3>
+                    <div class="output-display" id="outputFrom">
+                        <div class="status-indicator" id="statusFrom">●</div>
+                        <span id="valueFrom">Inativo</span>
+                    </div>
+                    <button class="btn-control btn-on" onclick="setOutputFrom('Ativo')">Ativar</button>
+                    <button class="btn-control btn-off" onclick="setOutputFrom('Inativo')">Desativar</button>
+                </div>
+
+                <div class="control-section">
+                    <h3>Entrada (Para)</h3>
+                    <div class="output-display" id="outputTo">
+                        <div class="status-indicator" id="statusTo">●</div>
+                        <span id="valueTo">Inativo</span>
+                    </div>
+                    <button class="btn-control btn-on" onclick="setOutputTo('Ativo')">Ativar</button>
+                    <button class="btn-control btn-off" onclick="setOutputTo('Inativo')">Desativar</button>
+                </div>
+            </div>
+            <div class="info-panel stats-panel">
+                <h2>📈 Estatísticas</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">Tempo Ativo</div>
+                        <div class="stat-value" id="uptime">0s</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Mudanças</div>
+                        <div class="stat-value" id="changes">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Status Geral</div>
+                        <div class="stat-value" id="generalStatus">Ativo</div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-panel history-panel">
+                <h2>📋 Histórico de Atividades</h2>
+                <div class="history-list" id="historyList">
+                    <div class="history-item">Sistema iniciado</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="security.js"></script>
+</body>
+</html>
